@@ -26,10 +26,10 @@ const requestLogger = (request, response, next) => {
   console.log('---')
   next()
 }
-
+const cors = require('cors')
+app.use(cors())
 app.use(express.json())
 app.use(requestLogger)
-
 app.get('/', (request, response) => {
   response.send('<h1>Hello World!</h1>')
 })
